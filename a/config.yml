@@ -1,0 +1,605 @@
+##################################################################
+##						RandomEvents							##
+##						Configuration							##
+##################################################################
+debugMode: false
+
+##################################################################
+## Wiki: https://github.com/Adri1711/RandomEventsWiki/wiki   	##
+## Discord: https://discord.gg/rcXhBn68mQ                       ##
+##################################################################
+useEncoding: 'UTF-8'
+
+##################################################################
+##						  GENERAL   							##
+##################################################################
+
+##You can concatenate diferent alias with ';' (DONT USE CAPS HERE)
+cmdAlias: 'revent;event'
+
+##Deactivate all sounds of the plugin
+deactivateSounds: false
+
+##Deactivate teleport on spectator for players
+avoidSpectatorTp: true
+
+##Ticks invincible after game
+invincibleAfterGame: 0
+
+##Distance to clear entities when a match end, this will clear dropped items when the match finish
+distanceClearEntities: 20
+
+##Seconds to check if the probability match for a random event
+secondsTimer: 60
+
+##Seconds to check if the minimum players is fulfilled to begin the match
+secondsCheckPlayers: 15
+
+##Minimum amount of players to begin checking for random events
+minPlayers: 0
+
+##These players wont count for the minPlayers config
+minPlayersBlackList:
+    - 'examplePlayerName'
+
+##Minimum time to begin the match if the min players are already inside
+minNumberOfTriesBeforeBeginning: 0
+
+## Percentage of probability to spawn a random event each time the timer is fired
+probabilityRandomEvent: 5
+
+##Probability that the spawned random event is a tournament
+probabilityRandomEventTournament: 5
+
+##Teleport to the last location instead of spawn of the plugin
+useLastLocation: false
+
+##Number of annoucements the random event will do before being cancelled for lack of players
+numberOfTriesBeforeCancelling: 10
+
+##If true you will only be able to join by clicking on the alert, if false you can do /revent join to join an event (NORMALLY USED FOR BEDROCK PLAYERS)
+needPasswordToJoin: true
+
+##Advanced spectator mode, it puts the users to GAMEMODE Spectator instead of just teleporting them on Survival GAMEMODE
+advancedSpectatorMode: false
+
+##Force Empty Inventory to Join the RandomEvents
+forceEmptyInventoryToJoin: false
+
+##Activate private chat 
+matchPrivateMatch: false
+
+##Force the players to enter the random event when its spawned
+forcePlayersToEnter: false
+
+##Force the players to enter the random event spectating ( It will works only if forcePlayersToEnter is enabled )
+forcePlayersToSpectate: false
+
+##Respawn on a random spawn in team games
+teamMatchRandomRespawn: false
+
+##If true, on RandomEvents team matches each player will have a chestplate with the team color. (With NameTagEdit plugin u can set this to false)
+useTeamChestplate: true
+
+
+##CAUTION. IT IS HIGHLY RECOMMENDED to let it true. If false, the plugin will not manage the items so players will join with own items and can lose them there.
+##Some minigames might not work if its set to false (Splegg, TNT Tag...) as they need special items to work
+inventoryManagement: true
+
+##Drops items after dying in a minigame
+dropItemsAfterDie: false
+
+##Seconds to begin the match when the min players are fulfilled (minimum 3 seconds)
+secondsToStartMatch: 5
+
+##Random disguise players to avoid teams (NEEDS LIBSDISGUISES TO WORK)
+randomDisguisePlayers: false
+skinDisguisePlayers: 'Dinnerbone'
+
+##Highest priority level of events. Enable this to bypass damage protection of faction plugins for example.
+highestPriorityDamageEvents: false
+
+##If true this will show the description of the minigame on player join instead of on match begin
+showInfoMinigameOnJoin: true
+
+##If true if you have permissions to start revents you will still need the permission to start an specific revent. 
+##For example, a revent called "Test Match" will need randomevent.start.Test_Match
+needSpecificPermissionStartRevent: false
+
+##Optional titles for some messages such as the seconds remaining to begin a match, turn this to true if you want to see titles instead of messages in chat.
+optionalTitles: false
+
+##Cooldown for users that doesnt have the cooldown bypass permission for beginning a Random Event without using credits in /revent gui ( On seconds )
+cooldownUsersBeginEvents: 3600
+
+##Commands that will be done each time a RandomEvent is fired
+commandsOnEventFire: []
+
+##Commands that will be done each time a player kill another one in certain Random Events
+commandsOnKill: []
+
+##Commands that will be done each time a user join a random event, use it in case you need to get the god mode off, to set the gamemode to survival, etc
+commandsOnUserJoin:
+    - 'psa %player%'
+##Commands that will be done each time a user leave a random event, use it in case you need to get the god mode off, to set the gamemode to survival, etc
+commandsOnUserLeave:
+    - 'psa %player%'
+##Commands that will be done when the match begin for all players, use it in case you need to get the god mode off, to set the gamemode to survival, etc
+commandsOnMatchBegin:
+    - 'god %player% off'
+##Commands that will be done when the match ends
+commandsOnMatchEnd:
+    - 'broadcast %event% has ended'
+##Allowed cmds in matchs. (DONT USE CAPS HERE)
+allowedCmds:
+    - msg
+    - ac
+    - revent
+    - randomevent   
+##Restrict to certain worlds
+restrictWorlds: false
+##Allowed worlds for broadcast (DONT USE CAPS HERE)
+allowedWorlds:
+    - 'world'
+
+guigameblocks:
+  ALLTIME: 'NETHER_STAR'
+  BR: 'STONE_SWORD'
+  BRT2: 'STONE_SWORD'
+  LJ: 'IRON_HORSE_ARMOR'
+  TKLL: 'IRON_SWORD'
+  TKLLT2: 'IRON_SWORD'
+  KBD: 'WOODEN_SWORD'
+  EARR: 'ARROW'
+  GEMC: 'EMERALD'
+  BOMB: 'TNT'
+  BOAT_RUN: 'OAK_BOAT'
+  HORSE_RUN: 'IRON_HORSE_ARMOR'
+  ESCAPE_FROM_BEAST: 'SKELETON_SKULL'
+  RACE: 'IRON_BOOTS'
+  TNTRUN: 'TNT'
+  SPLEEF: 'IRON_SHOVEL'
+  SPLEGG: 'EGG'
+  OITC: 'BOW'
+  SG: 'BEEF'
+  TSG: 'COOKED_BEEF'
+  SW: 'DIRT'
+  TSW: 'STONE'
+  ANVIL_SPLEEF: 'ANVIL'
+  WDROP: 'WATER_BUCKET'
+  QUAKE: 'STONE_HOE'
+  PBALL: 'SNOWBALL'
+  KOTH: 'GOLDEN_HELMET'
+  FISHSLAP: 'TROPICAL_FISH'
+  HOE: 'WOODEN_HOE'
+  SPLATOON: 'RED_DYE'
+  BOMBARDMENT: 'COAL_BLOCK'
+  BRTEAMS: 'ORANGE_DYE'
+  TKLLTEAMS: 'GOLDEN_SWORD'
+  PBALLTK: 'SNOW'
+  TSGTEAMS: 'COOKED_PORKCHOP'
+  TSWTEAMS: 'BEDROCK'
+  REDGREEN: 'EMERALD_BLOCK'
+  BLOCKPARTY: 'YELLOW_TERRACOTTA'
+  HIDEANDSEEK: 'MAP'
+  GLASSWALK: 'GLASS'
+
+##################################################################
+##					 SOME MINIGAMES SETUP       				##
+##################################################################
+
+##Show world border in some minigames
+showBorders: false
+
+##Force gamemode survival on minigames
+forceGamemodeSurvival: true
+
+##Use scoreboard in some minigames
+useScoreboard: true
+
+##Use particles in some minigames
+useParticles: false
+
+##Seconds for several minigames to damage all players if they are not attacking each other
+idleTimeForDamage: 10
+
+##Disable the multiple winners when they have the same points
+disableMultipleWinners: false
+
+##Paint games give default weapon so you dont need to put it in the kit
+paintGiveDefaultWeapon: true
+
+##Cooldown before respawning again in minigames with respawn
+cooldownAfterDeath: false
+
+##Cooldown before respawning again in minigames with respawn
+cooldownAfterDeathSeconds: 4
+
+##Equilibrate teams
+equilibrateTeams: true
+
+##Force non empty teams. Only works if  equilibrateTeams is enabled
+forceNonEmptyTeams: true
+
+##Seconds that a player is invincible after respawning in a top kill event (Put 0 to disable)
+invincibleAfterRespawn: 2
+
+##Flag to allow using glow on certains events
+activateGlow: false
+
+##################################################################
+##					    KNOCKBACK DUEL 		    				##
+##################################################################
+
+##Enable this to make a player lose when they fall into water in knockback duel minigames
+waterKillKnockbackDuel: false
+
+
+##################################################################
+##					      TOP KILLER  		    				##
+##################################################################
+
+##Heal killer after a kill in Top Killer Minigame
+topKillerHealAfterKill: true
+
+##################################################################
+##					      ARROW RAIN 		    				##
+##################################################################
+
+##Probability to spawn a power up of resistance in arrow rain games
+probabilityPowerUp: 1
+
+##Arrow damage in arrow rain minigame
+arrowRainDamage: 10
+
+##################################################################
+##						  GEM CRAWLER  							##
+##################################################################
+
+##Number of gems to win in gem crawler minigame
+numberOfGems: 10
+
+##Number of seconds you have to save the gems to win in gem crawler minigame
+numberOfSecondsWithGems: 10
+
+##################################################################
+##						  TNT RUN   							##
+##################################################################
+
+##Seconds to begin TNT_RUN so TNT will begin to disappear
+warmupTimeTNTRUN: 5
+
+##Enable this to make a player lose when they fall into water in tntrun minigames
+waterKillTNTRun: false
+
+##################################################################
+##						  TNT TAG   							##
+##################################################################
+
+##Speed duration on seconds for tnttag
+speedDuration: 100
+
+##Lvl of the speed for the runners on tnttag
+tntTagSpeedRunners: 3
+
+##Lvl of the speed for the holder of the tnt on tnttag
+tntTagSpeedHolder: 6
+
+##It allow to kill all player in the radius
+multipleKillOnExplosion: true
+
+##Radius for the explosion
+radiusOfTNTTagExplosion: 4
+
+##Show a title when you got the bomb
+useTitleWhenGetBomb: false
+
+##################################################################
+##						  SKYWARS   							##
+##################################################################
+
+##Maximum items in chests on Survival Games or Skywars minigames
+maxItemOnChests: 10
+
+##Minimum items in chests on Survival Games or Skywars minigames
+minItemOnChests: 3
+
+##Enable this to make a player lose when they fall into water in skywars minigames
+waterKillSW: false
+
+##################################################################
+##					  SURVIVAL GAMES		    				##
+##################################################################
+
+##Survival Games Area damage
+sgAreaDamage: 1
+
+##Survival Games Blocks per Shrink
+sgAreaShrinkBlocks: 100
+
+##Enable this to make a player lose when they fall into water in survival games minigames
+waterKillSG: false
+
+##################################################################
+##					       OITC		    		        		##
+##################################################################
+
+##Heal killer after a kill in OITC Minigame
+oitcHealAfterKill: true
+
+##################################################################
+##					       RACE		    	  	    	    	##
+##################################################################
+
+##Item material for checkpoint item
+checkpointItem: 'BLAZE_ROD'
+
+##Item material for vanish item
+vanishItem: 'ENDER_EYE'
+
+##Slow effect applied after going back to checkpoint
+raceSlowEffect: true
+
+##################################################################
+##					     QUAKECRAFT    	  	        	    	##
+##################################################################
+
+##Quake give default weapon so you dont need to put it in the kit
+quakeGiveDefaultWeapon: true
+
+##Quake shoot distance
+quakeShootDistance: 50
+
+##Cooldown to make a shoot on quake
+quakeShootCooldown: 1.5
+
+##Cooldown to make a jump on quake
+quakeJumpCooldown: 2.5
+
+##################################################################
+##					     PAINTBALL		    	  	    		##
+##################################################################
+
+##With infinite snowballs enabled you will just need 1 snowball on inventory
+infiniteSnowballs: true
+
+##Snowball damage, normally a damage > 20 is instantkill
+snowballsDamage: 40
+
+##################################################################
+##					      SPLEEF		    	  	    		##
+##################################################################
+
+##Enable getting snowballs that will break the floor on spleef
+snowballSpleef: false
+
+##Enable this to make a player lose when they fall into water in spleef minigames
+waterKillSpleef: false
+
+##Activate Idle damage on spleef to avoid afk camping
+activateIdleDamageSpleef: false
+
+##################################################################
+##					   ANVIL SPLEEF		    	  	    		##
+##################################################################
+
+##Enable this to disable knockback from snowballs 
+avoidSnowballKnockback: false
+
+##Enable this to make a player lose when they fall into water in spleef minigames
+waterKillAnvilSpleef: false
+
+##################################################################
+##					      SPLEGG		    	  	    		##
+##################################################################
+
+##Enable this to disable knockback from snowballs 
+avoidEggKnockback: false
+
+##Enable this to make a player lose when they fall into water in splegg minigames
+waterKillSplegg: false
+
+##################################################################
+##					    BOMBARDMENT		    	  	    		##
+##################################################################
+
+##Enable this to make a player lose when they fall into water in bombardment minigames
+waterKillBombardment: false
+
+##Offset of Y coord on bombardment, if you see your bombs on the minigame go higher than the foots of your player put this to -1 or -2
+offSetYBombardment: 0
+
+##################################################################
+##					     SPLATOON		    	  	    		##
+##################################################################
+
+##Number of blocks that are paint in the radius
+splatoonPaint: 10
+
+##Radios of blocks that are going to be painted on splatoon
+splatoonRadius: 2
+
+##Splatoon Egg Damage
+splatoonEggDamage: 5
+
+##################################################################
+##					     BLOCK PARTY	    	  	    		##
+##################################################################
+
+##If true, there will be PvP in block party games
+allowBlockPartyPvP: false
+
+##Material on the map that will be replaced by the blockPartyBlocks
+blockPartyMaterial: 'WHITE_WOOL'
+
+##Material for the wait item
+waitItemPartyMaterial: 'TERRACOTTA'
+
+##Blocks to use in BlockParty as colors
+blockPartyBlocks:
+    - 'BLUE_TERRACOTTA'
+    - 'BROWN_TERRACOTTA'
+    - 'CYAN_TERRACOTTA'
+    - 'GREEN_TERRACOTTA'  
+    - 'LIGHT_BLUE_TERRACOTTA'
+    - 'LIME_TERRACOTTA'
+    - 'MAGENTA_TERRACOTTA'
+    - 'ORANGE_TERRACOTTA'
+    - 'PINK_TERRACOTTA'
+    - 'PURPLE_TERRACOTTA'
+    - 'RED_TERRACOTTA'
+
+##################################################################
+##					     GLASS WALK 	    	  	    		##
+##################################################################
+
+##Is pvp allowed on GlassWalk
+allowGlassWalkPvP: true
+
+##Convert the glasses platform on 3x3 platform (The configuration map doesnt change, just put 1 glass it will convert to 3x3 square platform when match begin
+biggerPlatform: false
+
+##################################################################
+##					 GREEN LIGHT RED LIGHT 	    				##
+##################################################################
+
+##Seconds to check probability to stop the match
+secondsCheckStopSong: 1
+
+##Probability to stop the song each time it checks
+probabilityPerCheckToStopSound: 30
+
+#When the npc turn around, it will wait that ticks to kill people that moves (20 ticks = 1 second)
+ticksAfterMusicStopToKill: 10
+
+
+##################################################################
+##				    PARTICLES SETTINGS		    				##
+##################################################################
+
+##Allowed configurable particles ->
+##EXPLOSION_NORMAL  || EXPLOSION_LARGE    ||  EXPLOSION_HUGE    ||  FIREWORKS_SPARK
+##WATER_BUBBLE      || WATER_SPLASH       ||  WATER_WAKE        ||  SUSPENDED
+##SUSPENDED_DEPTH   || CRIT               ||  CRIT_MAGIC        ||  SMOKE_NORMAL
+##SMOKE_LARGE       || SPELL              ||  SPELL_INSTANT     ||  SPELL_MOB
+##SPELL_MOB_AMBIENT || SPELL_WITCH        ||  DRIP_WATER        ||  DRIP_LAVA
+##VILLAGER_ANGRY    || VILLAGER_HAPPY     ||  TOWN_AURA         ||  NOTE
+##PORTAL            || ENCHANTMENT_TABLE  ||  FLAME             ||  LAVA
+##CLOUD             || REDSTONE           ||  SNOWBALL          ||  SNOW_SHOVEL
+##SLIME             || HEART              ||  BARRIER           ||  ITEM_CRACK
+##BLOCK_CRACK       || BLOCK_DUST         ||  WATER_DROP        ||  MOB_APPEARANCE
+##DRAGON_BREATH     || END_ROD            ||  DAMAGE_INDICATOR  ||  SWEEP_ATTACK
+particleDeath: 'EXPLOSION_NORMAL'
+particleTNTTag: 'REDSTONE'
+
+##Particles forms:
+##blackSun(radius, radiusRate, rate, rateChange)    
+##circle(radius, rate)                               
+##crescent(radius, rate)                            
+##cylinder(height, radius, rate)                      
+##diamond(radiusRate, rate, height)                   
+##ellipse(radius, radius2, rate)                  
+##eye(radius, radius2, rate, extension)              
+##filledCircle(radius, rate, radiusRate)              
+##illuminati(size, extension)                        
+##infinity(radius, rate)                             
+##ring(rate, radius, radius2)                      
+##sphere(radius, rate)                                
+##meguminExplosion(size)    
+##Use RANDOM to spawn one of the effects at a time randomly    
+particle:
+  type: sphere
+  size: 1.0
+  radius: 1.0
+  radiusRate: 1.0
+  radius2: 1.0
+  rate: 4.0
+  rateChange: 1.0
+  height: 1.0
+  extension: 4.0
+##################################################################
+##					   TOURNAMENT CONFIG   	    				##
+##################################################################
+tournament:
+  spawn:
+    world: world
+    x: 0.0
+    y: 60.0
+    z: 0.0
+    pitch: 0.0
+    yaw: 0.0
+  maxPlayers: 64
+  minPlayers: 20
+  numberOfRounds: 5
+  rewards:
+      - 'eco give %player% 10000'
+
+##Spawn where the player will be teleported after minigame ends
+spawn:
+  world: world
+  x: 0.0
+  y: 60.0
+  z: 0.0
+  pitch: 0.0
+  yaw: 0.0
+##################################################################
+##					   STATS GUI CONFIG   	    				##
+##################################################################
+##Use -1 to hide a stat in the GUI
+statsmenu:
+  fill: 'STAINED_GLASS_PANE'
+  size: 54
+  ALLTIME: 4
+  BR: 10
+  BRT2: 11
+  LJ: 12
+  TKLL: 13
+  TKLLT2: 14
+  KBD: 15
+  EARR: 16
+  GEMC: 19
+  BOMB: 20
+  BOAT_RUN: 21
+  HORSE_RUN: 22
+  ESCAPE_FROM_BEAST: 23
+  RACE: 24
+  TNTRUN: 25
+  SPLEEF: 28
+  SPLEGG: 29
+  OITC: 30
+  SG: 31
+  TSG: 32
+  SW: 33
+  TSW: 34
+  ANVIL_SPLEEF: 38
+  WDROP: 39
+  QUAKE: 40
+  PBALL: 41
+  KOTH: 42
+  FISHSLAP: 43
+  HOE: 37
+  SPLATOON: 44
+  BOMBARDMENT: 46
+  BRTEAMS: 47
+  TKLLTEAMS: 48
+  PBALLTK: 50
+  TSGTEAMS: 51
+  TSWTEAMS: 52
+  REDGREEN: 49
+  BLOCKPARTY: -1
+  HIDEANDSEEK: -1
+  GLASSWALK: -1
+  
+##################################################################
+##					     MYSQL CONFIG   	    				##
+##################################################################
+##Enable MySQL to have statistics of the games!
+mysql:
+  enabled: false
+  UUIDMode: false
+  host: localhost
+  port: 3306
+  database: database
+  username: user
+  password: password
+  maxLifeTime: 45000 ##DONT TOUCH IF YOU DONT KNOW WHAT YOU ARE DOING

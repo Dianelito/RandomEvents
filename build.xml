@@ -1,0 +1,23 @@
+<project name="RandomEvents" default="makejar" basedir=".">
+	<target name="makejar" description="Create a jar for the project">
+		<mkdir dir="target" />
+		<jar destfile="target/${ant.project.name}.jar">
+			<fileset dir="bin" />
+			<fileset file="plugin.yml" />
+			<fileset file="config.yml" />
+			<fileset file="defaultConfig.yml" />
+			<fileset file="Luzverde2.nbs" />
+			<zipgroupfileset dir="libs" includes="HikariCP-3.4.5.jar" />
+			<zipgroupfileset dir="libs" includes="slf4j-api-1.7.25.jar" />
+		</jar>
+		<jar destfile="target/VActual/${ant.project.name}.jar">
+			<fileset dir="bin" />
+			<fileset file="plugin.yml" />
+			<fileset file="config.yml" />
+			<fileset file="defaultConfig.yml" />
+			<fileset file="Luzverde2.nbs" />
+			<zipgroupfileset dir="libs" includes="HikariCP-3.4.5.jar" />
+			<zipgroupfileset dir="libs" includes="slf4j-api-1.7.25.jar" />
+		</jar>
+	</target>
+</project>
