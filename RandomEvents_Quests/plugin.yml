@@ -1,4 +1,0 @@
-name: RandomEventsQuests
-main: com.adri1711.randomeventsquests.RandomEventsQuests
-version: 1.0
-depend: [Quests,RandomEvents]
